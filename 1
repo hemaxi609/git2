@@ -1,1 +1,16 @@
 hello file1
+pipeline{
+  agent any
+    stages {
+      stage('one'){
+            steps{
+                  echo 'hello file1'
+                  }
+                 }
+       stage('two'){
+               steps{
+                  echo 'hi file1'
+                  }
+                 }
+            }
+       }
