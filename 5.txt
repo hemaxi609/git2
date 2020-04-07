@@ -1,0 +1,10 @@
+pipeline{
+ agent any
+	 stages{
+		stage("first"){
+			steps{
+				echo "welcome to file 5"		
+			}
+		}
+	}
+}
