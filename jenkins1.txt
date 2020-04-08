@@ -7,7 +7,7 @@ pipeline{
 		stage('build'){
 			steps{
 			sh script: 'mvn clean package'
-			sh "mv target/*.war target/git2.war"
+			sh "mv /var/lib/jenkins/workspace/demo/target/*.war /var/lib/jenkins/workspace/demo/target/git2.war"
 			}
 		}
                
@@ -15,7 +15,7 @@ pipeline{
 			steps{
 				sshagent(['apache']) {
    				sh """
-				 scp -o StrictHostKeyChecking=no target/git2.war root@192.168.40.182:/var/www/html/f2.html
+				 scp -o StrictHostKeyChecking=no target/git2.war root@192.168.40.182:/var/www/html/webapps/
 				"""
 				 }
 			}
